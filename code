@@ -1,0 +1,51 @@
+// create a variable to hold your NFT's
+const nfts = [];
+
+// Function mintNFT() to store data into nfts;
+function mintNft(name, height, weight, age, country){
+
+    // Here we create object to get data
+    const data = {
+        user_name: name,
+        user_height: height,
+        user_weight: weight,
+        user_age: age,
+        user_country: country
+    };
+
+    // push data in nfts
+    nfts.push(data);
+}
+
+// Function listNFTs() to display data present in nfts
+function listNfts(){
+    
+    // Using for loop to iterate through array
+    for(let i=0;i<nfts.length;i++){
+        console.log("User:", i+1);
+        console.log("User name:", nfts[i].user_name);
+        console.log("User height:", nfts[i].user_height, "cm");
+        console.log("User weight:", nfts[i].user_weight, "kg");
+        console.log("User age:", nfts[i].user_age, "years");
+        console.log("User country:", nfts[i].user_country);
+        console.log();
+    }
+}
+
+// Function getTotalSupply() to calculate total no of user created in nfts
+function getTotalSupply(){
+    return nfts.length;
+}
+
+// Calling mintNft function
+mintNft("Pranjal",167, 55, 20, "India");
+mintNft("Anuj",173, 57, 20, "Korea");
+mintNft("Praveen",180, 65, 20, "America");
+mintNft("Aman",192, 74, 20, "Japan");
+mintNft("Kalu",176, 60, 20, "China");
+
+// Calling listNfts function to display the data
+listNfts();
+
+// Calling getTotalSupply() function to get the number of total suppies i.e. total number of users created
+console.log("Total number of user created in nfts:", getTotalSupply());
